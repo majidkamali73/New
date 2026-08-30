@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="محاسبه مساحت مثلث"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="روش محاسبه را انتخاب کنید:"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/modeRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioMode1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="۱) اندازه هر سه ضلع معلوم است"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioMode2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="۲) یک ضلع و دو زاویه معلوم است" />
+
+            <RadioButton
+                android:id="@+id/radioMode3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="۳) دو ضلع و زاویه بین آن‌ها معلوم است" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Mode 1: three sides -->
+        <LinearLayout
+            android:id="@+id/mode1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/edit_a1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ضلع a"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_b1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ضلع b"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_c1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ضلع c"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <!-- Mode 2: one side and two angles -->
+        <LinearLayout
+            android:id="@+id/mode2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/edit_a2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="اندازه ضلع (a)"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_angleB2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="زاویه مجاور اول (B) بر حسب درجه"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_angleC2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="زاویه مجاور دوم (C) بر حسب درجه"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:text="توجه: هر دو زاویه باید مجاور همان ضلع a باشند." />
+        </LinearLayout>
+
+        <!-- Mode 3: two sides and included angle -->
+        <LinearLayout
+            android:id="@+id/mode3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/edit_a3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ضلع اول (a)"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_b3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ضلع دوم (b)"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_angleC3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="زاویه بین دو ضلع (C) بر حسب درجه"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="محاسبه مساحت" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#3F51B5" />
+
+    </LinearLayout>
+</ScrollView>
